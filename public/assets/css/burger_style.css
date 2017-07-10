@@ -1,0 +1,28 @@
+body {
+	width:90%;
+	height:750px;
+	background-color:#BDB76B;
+}
+
+
+.container{
+	width:90%;
+	height:800px;
+	background-color:teals;
+}
+
+#pic-section {
+	width:200px:
+	height:200px;
+	margin-top: 20px;
+}
+
+img{
+	height:400px;
+	width:400px;
+}
+
+#add{
+	height:50px;
+	margin-bottom: 20px;
+}

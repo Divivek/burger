@@ -1,0 +1,58 @@
+<div class= "container">
+	
+	<div class = "row" >
+		<div class= "col-xs-12 text-center" id= "pic-section">
+		<img src="/assets/img/burger.png" alt="burger"  />
+		<h1>Eat-Da-Burger! </h1>
+	</div>
+	
+	 <div class="col-xs-6 text-center" class="deliver">
+		<div class="row">
+			{{#each burger_data}}
+				{{#unless this.deVoured}}
+					<div class = "col-xs-9 text center">
+						<pre>{{this.id}}. {{this.burger_name}}</pre>
+					</div>
+					
+					<div class="col-xs-3" text-center">
+						<form action="/burger/update?_method=PUT" method="POST">
+			          		<input type="hidden" name="burger_id" value= {{this.id}}>
+			          		<button type="submit"> Devour it </button>
+			        	</form>
+				  	</div>
+
+				{{/unless}}
+			{{/each}}
+ 		</div>
+	</div>
+		<div class="col-xs-6 text center" class="deliver">
+		 	{{#each burger_data}}
+			 	{{#if this.deVoured}}
+					
+					<div class = "col-xs-9 text center">
+						<pre>{{this.id}}. {{this.burger_name}}</pre>
+					</div>
+					<div class="col-xs-3" text-center">
+						<form action="/{{this.id}}?_method=DELETE" method="POST">
+			          		<input type="hidden" name="burger_id" value= {{this.id}}>
+			          		<button type="submit"> Delete </button>
+			        	</form>
+				  	</div>
+
+				{{/if}}
+			{{/each}}
+  		</div>
+ </div>
+	
+
+
+<form class="create-update-form" action="/burger/create" method="POST"
+value={{this.data}}>
+ <center> <div class="form-group">
+    <label for="burger"> </label>
+    <input type="text" id="add" name="burger_name">
+    <button type="submit">Add Burger</button>
+  </div>
+</form> </center>
+
+</div>
