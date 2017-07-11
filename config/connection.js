@@ -7,8 +7,8 @@ if(process.env.JSWSDB_URL) {
  connection = mysql.createConnection({
 	host: 'localhost',
 	port : '3306',
-	user : 'root',
-	password: '',
+	user: 'root',
+	password: 'divya',
 	database: "burgers_db"
 });
 };
