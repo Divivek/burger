@@ -2,13 +2,17 @@ var mysql = require('mysql');
 var connection;
 
 if(process.env.JSWSDB_URL) {
+		console.log(" connecting: JSWDB" );
+
 	connection=mysql.createConnection(process.env.JAWSDB_URL);
 } else {
+		console.log(" connecting: LOCAL" );
+
  connection = mysql.createConnection({
 	host: 'localhost',
 	port : '3306',
 	user: 'root',
-	password: 'divya',
+	password: '***********',
 	database: "burgers_db"
 });
 };
